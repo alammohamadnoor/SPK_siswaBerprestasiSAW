@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="02ea3626-e1f8-4884-92fc-16dc8b1f2518">
+	<property name="ireport.zoom" value="1.771561000000001"/>
+	<property name="ireport.x" value="620"/>
+	<property name="ireport.y" value="84"/>
+	<style name="Title" fontName="Times New Roman" fontSize="50" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#736343" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#E6DAC3"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     tb_bobot.`id_bobot` AS tb_bobot_id_bobot,
+     tb_bobot.`b1` AS tb_bobot_b1,
+     tb_bobot.`b2` AS tb_bobot_b2,
+     tb_bobot.`b3` AS tb_bobot_b3
+FROM
+     `tb_bobot` tb_bobot]]>
+	</queryString>
+	<field name="tb_bobot_id_bobot" class="java.lang.String"/>
+	<field name="tb_bobot_b1" class="java.lang.Float"/>
+	<field name="tb_bobot_b2" class="java.lang.Float"/>
+	<field name="tb_bobot_b3" class="java.lang.Float"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="136" splitType="Stretch">
+			<image>
+				<reportElement uuid="37c799cd-d49c-4de0-a4a4-5230eef711c4" x="23" y="4" width="90" height="90"/>
+				<imageExpression><![CDATA["C:\\Users\\llawl\\NetBeans\\SPK_siswaBerprestasi\\src\\Report\\PGRI.CLR. (2).png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement uuid="cb152bc9-abfa-4882-9c08-ef86340d8905" x="153" y="94" width="484" height="32"/>
+				<textElement textAlignment="Center">
+					<font fontName="Segoe UI" size="18"/>
+				</textElement>
+				<text><![CDATA[SISTEM PENUNJANG KEPUTUSAN SISWA BERPRESTASI]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="95c5992c-5cd3-436d-b9e8-15d7553d663e" style="SubTitle" x="207" y="62" width="372" height="22" forecolor="#000000"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" isBold="true" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[DATA NILAI BOBOT KRITERIA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="6ffb290f-697f-4f28-94ff-5fe89a01b8b8" style="Title" x="207" y="0" width="372" height="62"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="28" isBold="true" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[SMK PGRI 28 JAKARTA]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement uuid="7d9ccc47-c05b-46d6-a2d1-eb84505fc07e" positionType="FixRelativeToBottom" x="0" y="15" width="802" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement uuid="84205ade-e003-47b0-9473-8d9b6673370e" style="Column header" x="0" y="0" width="200" height="15" forecolor="#736343"/>
+				<textElement/>
+				<text><![CDATA[ID Bobot]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="633e57a1-e1b5-4a46-8aa3-ac8de4740b9f" style="Column header" x="200" y="0" width="200" height="15" forecolor="#736343"/>
+				<textElement/>
+				<text><![CDATA[Bobot Ujian Sekolah]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="aa21eaea-4ed5-4fae-8a0f-5531aa9c4279" style="Column header" x="400" y="0" width="200" height="15" forecolor="#736343"/>
+				<textElement/>
+				<text><![CDATA[Bobot Uji Kompetensi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="77fdeb55-f2a2-4fcd-8c6c-babc5e077aec" style="Column header" x="600" y="0" width="200" height="15" forecolor="#736343"/>
+				<textElement/>
+				<text><![CDATA[Bobot Nilai Raport]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<frame>
+				<reportElement uuid="581f933e-9d55-4225-98c4-6fa206c28e86" style="Row" mode="Opaque" x="0" y="0" width="802" height="15"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="52e864ae-5330-498b-b456-a8bf8f12cb8a" style="Detail" x="0" y="0" width="200" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{tb_bobot_id_bobot}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="d39a6998-c55b-43d4-90c7-d9478a5f786b" style="Detail" x="200" y="0" width="200" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{tb_bobot_b1}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="35ea2839-8bbf-4ac7-a801-9c7a97e4946b" style="Detail" x="400" y="0" width="200" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{tb_bobot_b2}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement uuid="c4733be0-fd42-4b87-9f8b-271410b6f193" style="Detail" x="600" y="0" width="200" height="15"/>
+					<textElement/>
+					<textFieldExpression><![CDATA[$F{tb_bobot_b3}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="130" splitType="Stretch">
+			<line>
+				<reportElement uuid="24dbcee4-5a20-4fba-b7dc-5e612beee874" positionType="FixRelativeToBottom" x="0" y="3" width="802" height="1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement uuid="26605855-3632-49cc-b257-ae6feec66418" x="651" y="14" width="44" height="20"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Jakarta,]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement uuid="327a68ac-3c21-48cf-99a3-81f844a3f330" x="695" y="14" width="109" height="20"/>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement uuid="9d2bbcb5-1272-44c7-b92b-552e5e933410" x="651" y="34" width="153" height="20"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Kepala Sekolah]]></text>
+			</staticText>
+			<staticText>
+				<reportElement uuid="9d2bbcb5-1272-44c7-b92b-552e5e933410" x="651" y="100" width="153" height="20"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Nurazis, SE., M.Pd]]></text>
+			</staticText>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement uuid="a630ded8-8f4d-4d5e-aeef-c3857921913d" mode="Opaque" x="-21" y="1" width="843" height="24" forecolor="#D0B48E" backcolor="#F2EBDF"/>
+				<textField evaluationTime="Report">
+					<reportElement uuid="fdf9caec-0a83-4ac8-b238-f8adba9c6db8" style="Column header" x="783" y="1" width="40" height="20" forecolor="#736343"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement uuid="9b736443-c498-4ed0-8331-56b2cc9d7d74" style="Column header" x="703" y="1" width="80" height="20" forecolor="#736343"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
